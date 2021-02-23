@@ -21,7 +21,7 @@ const TabList = () => {
       <ul className="nav nav-pills outline-active">
         <li className="nav-item">
           <NavLink href="/" as="/">
-            Global Feed
+            Feed Global
           </NavLink>
         </li>
 
@@ -47,13 +47,13 @@ const TabList = () => {
           href={`/?follow=${currentUser?.username}`}
           as={`/?follow=${currentUser?.username}`}
         >
-          Your Feed
+          Meu Feed
         </NavLink>
       </li>
 
       <li className="nav-item">
         <NavLink href="/" as="/">
-          Global Feed
+          Feed Global
         </NavLink>
       </li>
 

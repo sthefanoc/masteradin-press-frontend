@@ -54,7 +54,7 @@ const Logo = styled(CustomLink)`
   margin-right: 2rem !important;
   padding-top: 0 !important;
   padding-bottom: 0.25rem;
-  color: #5cb85c !important;
+  color: #49abdc !important;
 `;
 
 const NavbarList = styled("ul")`
@@ -84,25 +84,25 @@ const Navbar = () => {
     <NavbarContainer>
       <NavbarPresenter>
         <Logo href="/" as="/" onClick={handleClick}>
-          conduit
+          masteradin press
         </Logo>
         <NavbarList>
           <NavbarItem>
             <NavLink href="/" as="/" onClick={handleClick}>
-              Home
+              Início
             </NavLink>
           </NavbarItem>
           <Maybe test={isLoggedIn}>
             <NavbarItem>
               <NavLink href="/editor/new" as="/editor/new">
                 <i className="ion-compose" />
-                &nbsp;New Post
+                &nbsp;Novo Post
               </NavLink>
             </NavbarItem>
             <NavbarItem>
               <NavLink href="/user/settings" as="/user/settings">
                 <i className="ion-gear-a" />
-                &nbsp;Settings
+                &nbsp;Configurações
               </NavLink>
             </NavbarItem>
             <NavbarItem>
@@ -118,12 +118,12 @@ const Navbar = () => {
           <Maybe test={!isLoggedIn}>
             <NavbarItem>
               <NavLink href="/user/login" as="/user/login">
-                Sign in
+                Login
               </NavLink>
             </NavbarItem>
             <NavbarItem>
               <NavLink href="/user/register" as="/user/register">
-                Sign up
+                Registrar
               </NavLink>
             </NavbarItem>
           </Maybe>

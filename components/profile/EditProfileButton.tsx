@@ -14,7 +14,7 @@ const EditProfileButton = ({ isUser }: EditProfileButtonProps) => (
       as="/user/settings"
       className="btn btn-sm btn-outline-secondary action-btn"
     >
-      <i className="ion-gear-a" /> Edit Profile Settings
+      <i className="ion-gear-a" /> Editar configurações de perfil
     </CustomLink>
   </Maybe>
 );

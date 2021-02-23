@@ -62,7 +62,7 @@ const LoginForm = () => {
             <input
               className="form-control form-control-lg"
               type="password"
-              placeholder="Password"
+              placeholder="Senha"
               value={password}
               onChange={handlePasswordChange}
             />
@@ -73,7 +73,7 @@ const LoginForm = () => {
             type="submit"
             disabled={isLoading}
           >
-            Sign in
+            Login
           </button>
         </fieldset>
       </form>

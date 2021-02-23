@@ -132,13 +132,13 @@ const ArticlePreview = ({ article }) => {
                   }}
                   style={{
                     borderColor:
-                      hover && currentIndex === index ? "#5cb85c" : "initial",
+                      hover && currentIndex === index ? "#49abdc" : "initial",
                   }}
                 >
                   <span
                     style={{
                       color:
-                        hover && currentIndex === index ? "#5cb85c" : "inherit",
+                        hover && currentIndex === index ? "#49abdc" : "inherit",
                     }}
                     onClick={() => setPage(0)}
                   >

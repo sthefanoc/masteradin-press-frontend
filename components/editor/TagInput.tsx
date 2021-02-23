@@ -35,7 +35,7 @@ const TagInput = ({ tagList, addTag, removeTag }) => {
         <input
           className="form-control"
           type="text"
-          placeholder="Enter tags"
+          placeholder="Insira tags"
           value={tag}
           onChange={changeTagInput}
           onBlur={handleAddTag}

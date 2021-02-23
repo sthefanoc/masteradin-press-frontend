@@ -6,7 +6,7 @@ const Banner = () => (
   <div className="banner">
     <div className="container">
       <h1 className="logo-font">{APP_NAME.toLowerCase()}</h1>
-      <p>A place to share your knowledge.</p>
+      <p>Releases de imprensa baseados em dados e com infográficos interativos.</p>
     </div>
   </div>
 );

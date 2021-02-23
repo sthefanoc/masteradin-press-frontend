@@ -39,8 +39,17 @@ const ArticleDate = styled("span")`
   display: block;
 `;
 
+const option = {
+  year: 'numeric',
+  month: ('short'),
+  weekday: ('short'),
+  day: 'numeric',
+}
+const locale = 'pt-br'
+
 const ArticleMeta = ({ article }) => {
   if (!article) return;
+
 
   return (
     <ArticleMetaContainer>
@@ -61,7 +70,7 @@ const ArticleMeta = ({ article }) => {
         >
           {article.author?.username}
         </ArticleAuthorLink>
-        <ArticleDate>{new Date(article.createdAt).toDateString()}</ArticleDate>
+        <ArticleDate>{new Date(article.createdAt).toLocaleDateString( locale, option)}</ArticleDate>
       </ArticleInfo>
 
       <ArticleActions article={article} />

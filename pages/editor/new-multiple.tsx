@@ -54,72 +54,70 @@ const PublishArticleEditor = () => {
     Router.push("/");
   };
 
-  // Handle CSV
-
-
-  if (process.browser){
-    console.log('process browser is true');
-    
-    
-    const csvContent = localStorage.getItem('press.masteradin.com/csvimport') ? JSON.parse(localStorage.getItem('press.masteradin.com/csvimport')) : "";
-    console.log('now it\'s nice',csvContent);
+  // Handle CSV  
   
-    const confirmButton = document.querySelector('#confirmCSVUpload');
-    console.log('confirmation is here?', confirmButton)
-    if(confirmButton){
+  if (process.browser){    
+    const csvContent = JSON.parse(localStorage.getItem('press.masteradin.com/csvimport')) || "";
+    console.log('now it\'s nice',csvContent);
+    setTimeout(() => {
+      const confirmButton = document.querySelector('#confirmCSVUpload');
       confirmButton.addEventListener('click',() => { 
         console.log('bbbb');
-
+  
         const handleReplaceText = (newPost) => {
           let finalText = newPost.template
           Object.keys(newPost).forEach((item) =>{
-            finalText = finalText.replaceAll(`{${item}}`,newPost[item])
+            finalText = finalText.replace(`{${item}}`,newPost[item])
           })
-
+  
           return finalText
         }
-
+  
         for(let j =0;j<csvContent.length;j++){
           let newPost = csvContent[j];
           let postingImport = initialState;
-
+  
           if (newPost.title){ 
-
+  
             const handleTitleImport = (newPost) =>{
               postingImport.title = newPost.title;
+              dispatch({ type: "SET_TITLE", text: newPost.title });
             }
             const handleDescriptionImport = (newPost) =>{
               postingImport.description = newPost.description;
+              dispatch({ type: "SET_DESCRIPTION", text: newPost.description });
             }
             const handleBodyImport = (newPost) =>{
               postingImport.body = handleReplaceText(newPost)
+              dispatch({ type: "SET_BODY", text: postingImport.body });
             }
             const addTagImport = (newPost) => {
               postingImport.tagList = newPost.tagList.split(",").map(item=>{return item.trim()})
+              dispatch({ type: "ADD_TAG", tag: postingImport.tagList });
             }
             
             handleTitleImport(newPost);
             handleDescriptionImport(newPost);
             handleBodyImport(newPost);
             addTagImport(newPost);
-
+  
             const handleSubmitImport = async (newPost) => {
               // newPost.preventDefault();
               setLoading(true);
-
+  
               console.log('postingImport import',postingImport)
-
+  
               const { data, status } = await ArticleAPI.create(
                 postingImport,
                 currentUser?.token
               );
-
+  
               setLoading(false);
-
+  
               if (status !== 200) {
                 setErrors(data.errors);
               }
-
+  
               // Router.push("/");
               console.log('this is postingImport',postingImport)
             };
@@ -128,7 +126,7 @@ const PublishArticleEditor = () => {
         }
         localStorage.setItem('press.masteradin.com/csvimport','')
       })
-    }
+    },2000)
   }
   
   return (

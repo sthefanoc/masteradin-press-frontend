@@ -78,10 +78,10 @@ const SidebarTitle = styled("p")`
 const IndexPage = () => (
   <>
     <Head>
-      <title>HOME | NEXT REALWORLD</title>
+      <title>masteradin press | Releases</title>
       <meta
         name="description"
-        content="Next.js + SWR codebase containing realworld examples (CRUD, auth, advanced patterns, etc) that adheres to the realworld spec and API"
+        content="masteradin press: releases de imprensa com dados regionais e infográficos interativos"
       />
     </Head>
     <IndexPageContainer className="home-page">
@@ -96,7 +96,7 @@ const IndexPage = () => (
           </ContentContainer>
           <SidebarContainer>
             <SidebarPresenter>
-              <SidebarTitle>Popular Tags</SidebarTitle>
+              <SidebarTitle>Tags populares</SidebarTitle>
               <Tags />
             </SidebarPresenter>
           </SidebarContainer>

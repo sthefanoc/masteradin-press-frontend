@@ -25,7 +25,7 @@ const FollowUserButton = ({
     >
       <i className="ion-plus-round" />
       &nbsp;
-      {following ? "Unfollow" : "Follow"} {username}
+      {following ? "Deixar de seguir" : "Seguir"} {username}
     </button>
   );
 };

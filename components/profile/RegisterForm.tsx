@@ -60,7 +60,7 @@ const RegisterForm = () => {
             <input
               className="form-control form-control-lg"
               type="text"
-              placeholder="Username"
+              placeholder="Nome de usuário"
               value={username}
               onChange={handleUsernameChange}
             />
@@ -80,7 +80,7 @@ const RegisterForm = () => {
             <input
               className="form-control form-control-lg"
               type="password"
-              placeholder="Password"
+              placeholder="Senha"
               value={password}
               onChange={handlePasswordChange}
             />
@@ -91,7 +91,7 @@ const RegisterForm = () => {
             type="submit"
             disabled={isLoading}
           >
-            Sign up
+            Registrar
           </button>
         </fieldset>
       </form>

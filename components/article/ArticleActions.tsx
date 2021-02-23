@@ -20,7 +20,7 @@ const ArticleActions = ({ article }) => {
   const handleDelete = async () => {
     if (!isLoggedIn) return;
 
-    const result = window.confirm("Do you really want to delete it?");
+    const result = window.confirm("Confirmar apagar post?");
 
     if (!result) return;
 
@@ -40,14 +40,14 @@ const ArticleActions = ({ article }) => {
           as={`/editor/${article.slug}`}
           className="btn btn-outline-secondary btn-sm"
         >
-          <i className="ion-edit" /> Edit Article
+          <i className="ion-edit" /> Editar Artigo
         </CustomLink>
 
         <button
           className="btn btn-outline-danger btn-sm"
           onClick={handleDelete}
         >
-          <i className="ion-trash-a" /> Delete Article
+          <i className="ion-trash-a" /> Deletar Artigo
         </button>
       </span>
     </Maybe>

@@ -50,13 +50,13 @@ const CommentInput = () => {
     return (
       <p>
         <CustomLink href="/user/login" as="/user/login">
-          Sign in
+          Log in
         </CustomLink>
-        &nbsp;or&nbsp;
+        &nbsp;ou&nbsp;
         <CustomLink href="/user/register" as="/user/register">
-          sign up
+          Registre-se
         </CustomLink>
-        &nbsp;to add comments on this article.
+        &nbsp;para adicionar comentários a esse artigo.
       </p>
     );
   }
@@ -67,7 +67,7 @@ const CommentInput = () => {
         <textarea
           rows={3}
           className="form-control"
-          placeholder="Write a comment..."
+          placeholder="Escrever comentário..."
           value={content}
           onChange={handleChange}
           disabled={isLoading}
@@ -80,7 +80,7 @@ const CommentInput = () => {
           alt="Comment author's profile image"
         />
         <button className="btn btn-sm btn-primary" type="submit">
-          Post Comment
+          Postar comentário
         </button>
       </div>
     </form>

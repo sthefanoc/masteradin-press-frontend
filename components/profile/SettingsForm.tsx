@@ -76,7 +76,7 @@ const SettingsForm = () => {
             <input
               className="form-control"
               type="text"
-              placeholder="URL of profile picture"
+              placeholder="URL da imagem de perfil"
               value={userInfo.image}
               onChange={updateState("image")}
             />
@@ -86,7 +86,7 @@ const SettingsForm = () => {
             <input
               className="form-control form-control-lg"
               type="text"
-              placeholder="Username"
+              placeholder="Nome de usuário"
               value={userInfo.username}
               onChange={updateState("username")}
             />
@@ -96,7 +96,7 @@ const SettingsForm = () => {
             <textarea
               className="form-control form-control-lg"
               rows={8}
-              placeholder="Short bio about you"
+              placeholder="Sobre você"
               value={userInfo.bio}
               onChange={updateState("bio")}
             />
@@ -116,7 +116,7 @@ const SettingsForm = () => {
             <input
               className="form-control form-control-lg"
               type="password"
-              placeholder="New Password"
+              placeholder="Nova senha"
               value={userInfo.password}
               onChange={updateState("password")}
             />
@@ -127,7 +127,7 @@ const SettingsForm = () => {
             type="submit"
             disabled={isLoading}
           >
-            Update Settings
+            Atualizar configurações
           </button>
         </fieldset>
       </form>

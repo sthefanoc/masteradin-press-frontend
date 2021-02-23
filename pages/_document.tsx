@@ -30,34 +30,34 @@ class MyDocument extends Document<IProps> {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="keywords" content="nextjs, realworld" />
-          <meta property="og:locale" content="en_US" />
-          <meta property="og:site_name" content="next-realworld" />
-          <meta property="og:title" content="Next.js realworld example app" />
+          <meta property="og:locale" content="pt_BR" />
+          <meta property="og:site_name" content="masteradin press" />
+          <meta property="og:title" content="masteradin press" />
           <meta
             property="og:description"
-            content="Next.js + SWR codebase containing realworld examples"
+            content="Releases de imprensa com dados regionais e infográficos interativos"
           />
-          <meta property="og:url" content="https://next-realworld.now.sh/" />
+          <meta property="og:url" content="https://press.masteradin.com/" />
           <meta
             property="og:image"
-            content="https://next-realworld.now.sh/images/share-link.png"
+            content="https://media-exp1.licdn.com/dms/image/C561BAQEcFc6N8saXGg/company-background_10000/0/1564587339230?e=2159024400&v=beta&t=e79nndwVRRU9NVnGALDLfqu8wE1ANXn-Aux0bpC1YnM"
           />
-          <meta property="twitter:card" content="next-realworld" />
+          <meta property="youtube:card" content="Masteradin Youtube" />
           <meta
-            property="twitter:url"
-            content="https://next-realworld.now.sh/"
-          />
-          <meta
-            property="twitter:title"
-            content="Next.js realworld example app"
+            property="youtube:url"
+            content="https://www.youtube.com/channel/UCQzESaWhqb_hSX-uenFoxcA/"
           />
           <meta
-            property="twitter:description"
-            content="Next.js + SWR codebase containing realworld examples"
+            property="youtube:title"
+            content="Masteradin Youtube"
           />
           <meta
-            property="twitter:image"
-            content="https://machimban.com/images/talk-link.jpg"
+            property="youtube:description"
+            content="Masteradin Youtube"
+          />
+          <meta
+            property="youtube:image"
+            content="https://yt3.ggpht.com/ytc/AAUvwniSIEFk16L3nTZveq-8QE18dQG_-5YANvaCwM_-=s88-c-k-c0x00ffffff-no-rj"
           />
           <meta name="msapplication-TileColor" content="#000" />
           <meta
@@ -134,7 +134,7 @@ class MyDocument extends Document<IProps> {
             sizes="16x16"
             href="/images/favicon-16x16.png"
           />
-          <script
+          {/* <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: `{
@@ -148,9 +148,9 @@ class MyDocument extends Document<IProps> {
               ],
             }`,
             }}
-          />
+          /> */}
           <link rel="manifest" href="/manifest.json" />
-          <link rel="stylesheet" href="//demo.productionready.io/main.css" />
+          {/* <link rel="stylesheet" href="//demo.productionready.io/main.css" /> */}
           <link
             rel="stylesheet"
             href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"

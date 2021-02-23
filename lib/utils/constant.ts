@@ -1,6 +1,6 @@
-export const SERVER_BASE_URL = `https://conduit.productionready.io/api`;
+export const SERVER_BASE_URL = `http://localhost:3001/api`;
 
-export const APP_NAME = `conduit`;
+export const APP_NAME = `masteradin press`;
 
 export const ARTICLE_QUERY_MAP = {
   "tab=feed": `${SERVER_BASE_URL}/articles/feed`,

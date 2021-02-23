@@ -41,11 +41,10 @@ const Link = styled("a")``;
 const Footer = () => (
   <FooterContainer>
     <FooterPresenter>
-      <Logo href="/">conduit</Logo>
+      <Logo href="/">masteradin press</Logo>
       <Attribution>
-        An interactive learning project from{" "}
-        <Link href="https://thinkster.io">Thinkster</Link>. Code &amp; design
-        licensed under MIT.
+        Uma compilação de releases de imprensa feita pela{" "}
+        <Link href="https://masteradin.com">masteradin</Link>. Growth &amp; Development.
       </Attribution>
     </FooterPresenter>
   </FooterContainer>

@@ -13,7 +13,7 @@ const Tags = () => {
   const handleClick = React.useCallback(() => setPage(0), []);
   const { data, error } = useSWR(`${SERVER_BASE_URL}/tags`, fetcher);
 
-  if (error) return <ErrorMessage message="Cannot load popular tags..." />;
+  if (error) return <ErrorMessage message="Não foi possível carregar tags..." />;
   if (!data) return <LoadingSpinner />;
 
   const { tags } = data;

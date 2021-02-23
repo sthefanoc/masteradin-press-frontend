@@ -72,7 +72,7 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
                   <input
                     className="form-control form-control-lg"
                     type="text"
-                    placeholder="Article Title"
+                    placeholder="Título do Artigo"
                     value={posting.title}
                     onChange={handleTitle}
                   />
@@ -82,7 +82,7 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
                   <input
                     className="form-control"
                     type="text"
-                    placeholder="What's this article about?"
+                    placeholder="Sobre o que é este artigo?"
                     value={posting.description}
                     onChange={handleDescription}
                   />
@@ -92,7 +92,7 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
                   <textarea
                     className="form-control"
                     rows={8}
-                    placeholder="Write your article (in markdown)"
+                    placeholder="Escreva o artigo (em markdown)"
                     value={posting.body}
                     onChange={handleBody}
                   />
@@ -110,7 +110,7 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
                   disabled={isLoading}
                   onClick={handleSubmit}
                 >
-                  Update Article
+                  Atualizar artigo
                 </button>
               </fieldset>
             </form>

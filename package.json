@@ -16,8 +16,10 @@
     "lazysizes": "^5.2.2",
     "marked": "^1.1.1",
     "next": "^9.5.1",
+    "papaparse": "^5.3.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-file-reader": "^1.1.4",
     "swr": "^0.3.0"
   },
   "devDependencies": {
