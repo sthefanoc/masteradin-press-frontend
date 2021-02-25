@@ -1,4 +1,6 @@
-export const SERVER_BASE_URL = `http://localhost:3001/api`;
+// export const SERVER_BASE_URL = `http://localhost:5000/api`;
+// export const SERVER_BASE_URL = `http://localhost:3001/api`;
+export const SERVER_BASE_URL = `https://masteradin-press-backend.herokuapp.com/api`;
 
 export const APP_NAME = `masteradin press`;
 
