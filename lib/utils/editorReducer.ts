@@ -15,6 +15,16 @@ const editorReducer = (state, action) => {
         ...state,
         body: action.text
       };
+    case "SET_LINK":
+      return {
+        ...state,
+        link: action.text
+      };
+    case "SET_INFOGRAPHIC":
+    return {
+      ...state,
+      infographicCode: action.text
+    };
     case "ADD_TAG":
       return {
         ...state,

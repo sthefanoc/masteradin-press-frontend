@@ -6958,13 +6958,23 @@ footer .attribution {
   color: #fff;
 }
 
-.article-page .article-content p {
+.article-content p {
   font-family: 'Source Serif Pro', serif;
   font-size: 1.2rem;
   line-height: 1.8rem;
   margin-bottom: 2rem;
 }
 
+.article-content li {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.article-content img {
+  width: 80%;
+}
 .article-page .article-content h1,
 .article-page .article-content h2,
 .article-page .article-content h3,
@@ -6979,8 +6989,40 @@ footer .attribution {
   text-align: center;
   margin: 1.5rem 0 3rem 0;
 }
-.article-page .article-actions .article-meta .info {
+.article-actions .article-meta .info {
   text-align: left;
+}
+
+.infographic-form {
+  display: flex;
+}
+.infographic-form .card-block {
+  padding: 0;
+  flex: 10 0 auto;
+  width: 80%;
+}
+.infographic-form .card-block textarea {
+  border: 0px;
+  font-size: 0.8rem;
+  padding: 1.25rem;
+}
+
+.infographic-form .card-footer {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 150px;
+  font-size: 10px;
+  text-decoration: underline;
+  text-align: center;
+}
+.infographic-form .card-footer .btn {
+  font-weight: 500;
+  float: right;
+}
+.infographic-form .card-footer .helper-text {
+  float: right;
 }
 
 .article-page .comment-form .card-block {

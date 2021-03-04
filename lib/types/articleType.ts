@@ -17,6 +17,8 @@ export type ArticleType = {
   updatedAt: number;
   favoritesCount: number;
   favorited: boolean;
+  link: string;
+  infographicCode: string
 };
 
 export type Author = {

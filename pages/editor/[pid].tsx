@@ -16,7 +16,11 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
     description: initialArticle.description,
     body: initialArticle.body,
     tagList: initialArticle.tagList,
+    link: initialArticle.link,
+    infographicCode: initialArticle.infographicCode,
+    fileUpload: initialArticle.fileUpload,
   };
+
 
   const [isLoading, setLoading] = React.useState(false);
   const [errors, setErrors] = React.useState([]);
@@ -35,6 +39,10 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
     dispatch({ type: "SET_BODY", text: e.target.value });
   const addTag = (tag) => dispatch({ type: "ADD_TAG", tag: tag });
   const removeTag = (tag) => dispatch({ type: "REMOVE_TAG", tag: tag });
+  const handleLink = (e) =>
+    dispatch({ type: "SET_LINK", text: e.target.value });
+  const handleInfographicCode = (e) =>
+    dispatch({ type: "SET_INFOGRAPHIC", text: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +58,7 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
         },
       }
     );
+    console.log('lalalala',(posting ))
     setLoading(false);
 
     if (status !== 200) {
@@ -98,12 +107,32 @@ const UpdateArticleEditor = ({ article: initialArticle }) => {
                   />
                 </fieldset>
 
+                <fieldset className="form-group">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Link da matéria original"
+                    value={posting.link}
+                    onChange={handleLink}
+                  />
+                </fieldset>
+
+                <fieldset className="form-group">
+                  <textarea
+                    className="form-control"
+                    rows={3}
+                    placeholder="Código do infográfico"
+                    value={posting.infographicCode}
+                    onChange={handleInfographicCode}
+                  />
+                </fieldset>
+
                 <TagInput
                   tagList={posting.tagList}
                   addTag={addTag}
                   removeTag={removeTag}
                 />
-
+                
                 <button
                   className="btn btn-lg pull-xs-right btn-primary"
                   type="button"

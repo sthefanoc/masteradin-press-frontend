@@ -1,8 +1,11 @@
+import Head from "next/head";
+import Link from "next/link";
 import styled from "@emotion/styled";
 import marked from "marked";
-import React from "react";
+import React, {useEffect} from "react";
 
 import ArticleMeta from "components/article/ArticleMeta";
+import ArticleInfographic from "components/article/ArticleInfographic";
 import CommentList from "components/comment/CommentList";
 import LoadingSpinner from "components/common/LoadingSpinner";
 import ArticleAPI from "lib/api/article";
@@ -75,7 +78,8 @@ const ArticleContentContainer = styled("div")`
 const ArticleContentPresenter = styled("div")`
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  flex-direction: column;
   flex: 0 0 100%;
   max-width: 100%;
   min-height: 1px;
@@ -85,6 +89,28 @@ const ArticleContentPresenter = styled("div")`
 
 const ArticleContent = styled("div")`
   width: 100%;
+`;
+
+const ArticleInfographicContainer = styled("div")`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0px;
+  padding: 0;
+`;
+
+const ArticleInfographicPresenter = styled("div")`
+  position: relative;
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-height: 1px;
+  padding: 0 0px;
+
+  @media (min-width: 768px) {
+    position: relative;
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+    margin-left: 16.66667%;
+  }
 `;
 
 const ArticleTagList = styled("ul")`
@@ -97,9 +123,9 @@ const ArticleTagList = styled("ul")`
 const ArticleTagItem = styled("li")`
   display: inline-block !important;
   border: 1px solid #ddd;
-  color: #aaa !important;
+  color: #aaa;
   background: 0 0 !important;
-  font-size: 0.8rem;
+  font-size: 0.8rem !important;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   white-space: nowrap;
@@ -108,6 +134,10 @@ const ArticleTagItem = styled("li")`
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
+  &:hover {
+    color: #000;
+    cursor: pointer; 
+  }
 `;
 
 const Divider = styled("hr")`
@@ -152,32 +182,71 @@ const ArticlePage = ({ article, pid }: ArticlePageProps) => {
     __html: marked(article.body, { sanitize: true }),
   };
 
+  useEffect(() => {
+    const articleArea = document.querySelector('.article-content');
+    const imgs = articleArea.querySelectorAll('img');
+    Array.from(imgs).map((item)=>{
+      let name = item.src.split('/').pop().split('.')[0];
+      let newLinkTag = document.createElement('a');
+      newLinkTag.href = item.src;
+      newLinkTag.download = name;
+      newLinkTag.innerHTML = item.innerHTML;
+
+      item.parentNode.insertBefore(newLinkTag, item)
+      console.log(newLinkTag)
+      // item.parentNode.replaceChild(item,newLinkTag);
+    })
+    console.log(imgs)
+  });
+
+  // console.log('BODY',marked(article.body, { sanitize: false }))
+
+  // const imgs = document.querySelectorAll('img');
+  // console.log(imgs)
+
   return (
-    <ArticlePageContainer>
-      <ArticleInfoContainer>
-        <ArticleInfoPresenter>
-          <ArticleTitle>{article.title}</ArticleTitle>
-          <ArticleMeta article={article} />
-        </ArticleInfoPresenter>
-      </ArticleInfoContainer>
-      <ArticleContentContainer>
-        <ArticleContentPresenter className="article-content">
-          <ArticleContent dangerouslySetInnerHTML={markup} />
-          <ArticleTagList>
-            {article.tagList?.map((tag) => (
-              <ArticleTagItem key={tag}>{tag}</ArticleTagItem>
-            ))}
-          </ArticleTagList>
-        </ArticleContentPresenter>
-        <Divider />
-        <ArticleActions />
-        <CommentListContainer>
-          <CommentListPresenter>
-            <CommentList pid={pid} />
-          </CommentListPresenter>
-        </CommentListContainer>
-      </ArticleContentContainer>
-    </ArticlePageContainer>
+    <>
+      <Head>
+        <title>{article.title}</title>
+        <meta name="description" content={article.description} />
+        <link rel="canonical" href={article.link}/>
+      </Head>
+      <ArticlePageContainer>
+        <ArticleInfoContainer>
+          <ArticleInfoPresenter>
+            <ArticleTitle>{article.title}</ArticleTitle>
+            <ArticleMeta article={article} />
+          </ArticleInfoPresenter>
+        </ArticleInfoContainer>
+        <ArticleContentContainer>
+          <ArticleContentPresenter className="article-content">
+            <ArticleContent dangerouslySetInnerHTML={markup} />
+            {article.infographicCode ? 
+              <ArticleInfographicContainer>
+                <ArticleInfographicPresenter>
+                  <ArticleInfographic code={article.infographicCode}/>
+                </ArticleInfographicPresenter>
+              </ArticleInfographicContainer>
+              :
+              ""}
+            <ArticleTagList>
+              {article.tagList?.map((tag) => (
+                <Link href={`/?tag=${encodeURI(tag)}`}>
+                  <ArticleTagItem key={tag}>{tag}</ArticleTagItem>
+                </Link>
+              ))}
+            </ArticleTagList>
+          </ArticleContentPresenter>
+          <Divider />
+          <ArticleActions />
+          <CommentListContainer>
+            <CommentListPresenter>
+              <CommentList pid={pid} />
+            </CommentListPresenter>
+          </CommentListContainer>
+        </ArticleContentContainer>
+      </ArticlePageContainer>
+    </>
   );
 };
 

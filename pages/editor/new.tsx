@@ -8,6 +8,7 @@ import ArticleAPI from "../../lib/api/article";
 import storage from "../../lib/utils/storage";
 import editorReducer from "../../lib/utils/editorReducer";
 
+import styled from "@emotion/styled";
 
 import FileReader from '../../components/article/ArticleNewImport'
 
@@ -17,8 +18,19 @@ const PublishArticleEditor = () => {
     description: "",
     body: "",
     tagList: [],
+    link: "",
+    infographicCode: "",
     fileUpload: "",
   };
+
+  const Divider = styled("hr")`
+    box-sizing: content-box;
+    height: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  `;
 
   const [isLoading, setLoading] = React.useState(false);
   const [errors, setErrors] = React.useState([]);
@@ -33,12 +45,14 @@ const PublishArticleEditor = () => {
     dispatch({ type: "SET_BODY", text: e.target.value });
   const addTag = (tag) => dispatch({ type: "ADD_TAG", tag: tag });
   const removeTag = (tag) => dispatch({ type: "REMOVE_TAG", tag: tag });
+  const handleLink = (e) =>
+    dispatch({ type: "SET_LINK", text: e.target.value });
+  const handleInfographicCode = (e) =>
+  dispatch({ type: "SET_INFOGRAPHIC", text: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-    console.log('posting',posting)
 
     const { data, status } = await ArticleAPI.create(
       posting,
@@ -169,6 +183,26 @@ const PublishArticleEditor = () => {
                   />
                 </fieldset>
 
+                <fieldset className="form-group">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Link da matéria original"
+                    value={posting.link}
+                    onChange={handleLink}
+                  />
+                </fieldset>
+
+                <fieldset className="form-group">
+                  <textarea
+                    className="form-control"
+                    rows={3}
+                    placeholder="Código do infográfico"
+                    value={posting.infographicCode}
+                    onChange={handleInfographicCode}
+                  />
+                </fieldset>
+
                 <TagInput
                   tagList={posting.tagList}
                   addTag={addTag}
@@ -185,7 +219,8 @@ const PublishArticleEditor = () => {
                 </button>
               </fieldset>
             </form>
-            <FileReader />
+            <Divider />
+            <FileReader csvImport={posting.fileUpload} />
 
             </div>
         </div>

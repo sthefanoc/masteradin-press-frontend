@@ -46,7 +46,7 @@ const PaginationItem = styled("li")`
   }
 
   &:hover {
-    color: #3d8b3d;
+    color: #0f5375;
     background-color: #eceeef;
     border-color: #ddd;
   }
@@ -55,8 +55,8 @@ const PaginationItem = styled("li")`
     z-index: 2;
     color: #fff;
     cursor: default;
-    background-color: #5cb85c;
-    border-color: #5cb85c;
+    background-color: #0f5375;
+    border-color: #0f5375;
   }
 `;
 

@@ -32,8 +32,8 @@ const Attribution = styled("span")`
   vertical-align: middle;
   margin-left: 10px;
   font-size: 0.8rem;
-  color: #bbb;
-  font-weight: 300;
+  color: #787878;
+  font-weight: 400;
 `;
 
 const Link = styled("a")``;

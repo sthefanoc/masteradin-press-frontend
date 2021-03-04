@@ -9,7 +9,7 @@ import storage from "../../lib/utils/storage";
 import editorReducer from "../../lib/utils/editorReducer";
 
 
-import FileReader from '../../components/article/ArticleNewImport'
+import FileReader from '../../components/article/ArticleNewImportOLD'
 
 const PublishArticleEditor = () => {
   const initialState = {
