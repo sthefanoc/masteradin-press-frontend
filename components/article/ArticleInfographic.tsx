@@ -6,11 +6,13 @@ const ArticleInfographic = ({ code }) => {
 
     const copyText = () => {
         /* Get the text field */
-        const copyText = document.getElementById("infographicCode");
+        const copyText = document.getElementById("infographicCode") as HTMLInputElement;
+
+        
       
         /* Select the text field */
-        // copyText.select();
-        // copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
       
         /* Copy the text inside the text field */
         document.execCommand("copy");
@@ -20,7 +22,7 @@ const ArticleInfographic = ({ code }) => {
       }
   
   return (
-    <form className="card infographic-form">
+    <form className="card infographic-form" style={{maxWidth:"80%"}}>
       <div className="card-block">
         <textarea
           rows={3}

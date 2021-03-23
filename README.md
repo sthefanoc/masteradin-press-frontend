@@ -1,34 +1,34 @@
-# ![Next.js + SWR Example App](project-logo.png)
+[![LinkedIn][linkedin-shield]][linkedin-url] <br />
+![Twitter Follow](https://img.shields.io/twitter/follow/Sthefano_C?style=social) <br />
 
-> ### Next.js + SWR codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/sthefanocarvalho
 
-### [Demo](https://next-realworld.now.sh/)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
+<h1 align="center">Masteradin Press | MERN App</h1>
 
-Originally created for this [GH issue](https://github.com/gothinkster/realworld/issues/336). The codebase is now feature complete; please submit bug fixes via pull requests & feedback via issues.
+<p align="center">
+  <img width="100%" alt="Masteradin Press Header" src="/repo/Masteradin Press - MERN App - Header.png">
+</p>
 
-We're currently working on some docs for the codebase (explaining where functionality is located, how it works, etc) but most things should be self explanatory if you have a minimal understanding of Next.js/SWR.
+Website to share press releases with different journalists. It has authentication, allows users to follow profiles and comment on articles.
+Next.js + SWR.
 
-## Getting started
+<p align="center">
+  <img width="100%" alt="Masteradin Press Preview" src="/repo/Masteradin Press - MERN App - Complete.webp">
+</p>
 
-You can view a live demo over at [https://next-realworld.now.sh/](https://next-realworld.now.sh/)
+## Getting Started
 
-To get the frontend running locally:
+To get this running on another machine, just clone the repo and run the command to start the server. It is important to have node installed:
 
-- Clone this repo
-- `npm install` to install all dependencies
-- `npm run dev` to start the local server
+```
+npm install
+npm run dev
+```
 
-### Making requests to the backend API
+Afterwards, it is necessary to change the constants related to your project on `lib/utils/constant.js`.
 
-For convenience, we have a live API server running at `https://conduit.productionready.io/api` for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
-
-The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
-
-If you want to change the API URL to a local server, simply edit `lib/utils/constant.js` and change `SERVER_BASE_URL` to the local server's URL (i.e. `localhost:3000/api`)
-
-## Functionality overview
-
-The example application is a social blogging site (i.e. a Medium.com clone) called "Conduit". It uses a custom API for all requests, including authentication. You can view a live demo over at [https://next-realworld.now.sh/](https://next-realworld.now.sh/)
+### Functionality
 
 **General functionality:**
 
@@ -59,6 +59,29 @@ The example application is a social blogging site (i.e. a Medium.com clone) call
   - Show basic user info
   - List of articles populated from author's created articles or author's favorited articles
 
-<br />
+### Styles
 
-[![Brought to you by Thinkster](https://raw.githubusercontent.com/gothinkster/realworld/master/media/end.png)](https://thinkster.io)
+The website is responsive. Using media-queries the app can be used on desktop or smaller screens.
+Styled Components were used to organize styling for different components.
+
+## Deployment
+
+The app is deployed using [Netlify](https://www.netlify.com/) for the front-end, [Heroku](https://dashboard.heroku.com/app/) as back-end.
+The domain is managed on the [Hostinger](https://www.hostinger.com.br/) platform.
+
+## Built With
+
+- [Visual Studio Code](https://code.visualstudio.com/) - The editor
+- [NextJS](https://nextjs.org/)
+- [MongoDB](https://www.mongodb.com/)
+- [Express](https://expressjs.com/)
+- [ReactJS](https://reactjs.org/)
+- [NodeJS](http://nodejs.org/)
+
+## Authors
+
+- **Sthefano Carvalho** - [SthefanoC](https://github.com/sthefanoc)
+
+## Acknowledgments
+
+- Project inspired by [RealWorld codebase](https://github.com/gothinkster/realworld)
