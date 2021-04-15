@@ -94,10 +94,10 @@ const Navbar = () => {
           </NavbarItem>
           <Maybe test={isLoggedIn}>
             <NavbarItem>
-              <NavLink href="/editor/new" as="/editor/new">
+              {/* <NavLink href="/editor/new" as="/editor/new">
                 <i className="ion-compose" />
                 &nbsp;Novo Post
-              </NavLink>
+              </NavLink> */}
             </NavbarItem>
             <NavbarItem>
               <NavLink href="/user/settings" as="/user/settings">
